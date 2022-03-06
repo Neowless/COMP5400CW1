@@ -1,6 +1,6 @@
-# Seven Segment Display Driver Assessment
+# COPM5400 Coursework1
 
-## Files Introduction
+## Question 1 
 This repository is where you will develop a driver for the Seven Segment Display peripherals on the DE1-SoC.
 
 Please refer to the assignment specification on Minerva for more details.
