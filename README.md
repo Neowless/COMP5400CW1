@@ -2,11 +2,14 @@
 
 ## Question 1 
 
-### Required Layouts for the Hexadecimal Numbers 0-F
-<div align=center><img width="400" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/de5207dec5c1429ed5511d0bf0b9ab513bf6841b/Question1/0-400.svg?token=AJKWO6AG3I7ZF5PR7E47D3LCETYK4"/></div>
+### Fitness Plot of the Mice as a Function of the Genertion Count
+<div align=center><img width="400" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/e1373e0b9de5c8d6b2b86aaf0ce66d0b625631d2/Question1/0-400.svg"/></div>
 
-<div align=center><text>Fig 1. Bit Mapping Layout</text></div>
+<div align=center><text>Fig 1. Average and Best Fitness versus Generation Count from 0-400</text></div>
 
+The simulation results are exported in the Qustion1.pop, opened with Visual Studio Code and pasted in MATLAB to generate the figures.
+
+### Reason Why Choosing This Range
 
 This repository is where you will develop a driver for the Seven Segment Display peripherals on the DE1-SoC.
 
