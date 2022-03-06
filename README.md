@@ -1,6 +1,13 @@
 # COPM5400 Coursework1
 
 ## Question 1 
+
+### Required Layouts for the Hexadecimal Numbers 0-F
+<div align=center><img width="400" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/de5207dec5c1429ed5511d0bf0b9ab513bf6841b/Question1/0-400.svg?token=AJKWO6AG3I7ZF5PR7E47D3LCETYK4"/></div>
+
+<div align=center><text>Fig 1. Bit Mapping Layout</text></div>
+
+
 This repository is where you will develop a driver for the Seven Segment Display peripherals on the DE1-SoC.
 
 Please refer to the assignment specification on Minerva for more details.
