@@ -140,9 +140,6 @@ public:
 };
 ```
 
-
-
-
 |  Parameters |  Source Code |  Influence |
 |---|---|---|
 |  Crossover Probability | `theGA(0.7f, 0.05f)`  | The core in the evolution of nature is played by the crossover of biological genes. Similarly, The core in genetic algorithms is played by the crossover operator of genetic operations. A crossover is an operation in which parts of the structure of two parent individuals are replaced and recombined to create a new individual. By crossover, the search power of genetic algorithms is improved by leaps and bounds.  |
@@ -152,3 +149,19 @@ public:
 |  Simulation Time |  `This.SetTimeSteps(100)` | The simulation time determines the amount of the total behaviours in each generation  |
 
 <div align=center><text>Table 2. Parameters in Genetic Algorithms</text></div>
+
+## Question 4
+
+### Performance Evaluation of Different Fitness Functions
+
+
+
+
+*** 
+### Experiment with Different Sensor Configurations
+
+
+
+
+*** 
+### Reasons Behind Experiment
