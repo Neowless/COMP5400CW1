@@ -104,6 +104,8 @@ When the simulation started, the behaviour of the mice is similar to the origina
 
 With the increment of the simulation generation count, speed of the mice increased a lot, and the mice just move directly rather than change its direction. The performance of the mice deteriorated.
 
+The fitness function determines the **trend** and **efficiency** of the evolution.
+
 
 *** 
 ### Parameters in Genetic Algorithm
@@ -154,7 +156,19 @@ public:
 
 ### Performance Evaluation of Different Fitness Functions
 
+The fitness function should be evaluated in different aspects, the evolution time and final performance.
 
+**Evolution Time**
+
+Evolution time is defined as the generation count the simulation took that the fitness value will be stable. Less generation amount it takes, better the fitness function it will be.
+
+**Stability of Average Fitness Value**
+
+This is defined by the average fitness value's stability and noise level. 
+
+**Cheese Allocation**
+
+This is defined by the  which defined by the standard deviation of all the fitness values after 1000 generations of evolution. Smaller standart deviation indicates the fitness function has better performance
 
 
 *** 
