@@ -35,70 +35,32 @@ The mice evolves fatser, smarter and more efficient seeking the cheese over evol
 
 <div align=center><text>Table 1. Mice Behaviours in Different Generations</text></div>
 
-This repository is where you will develop a driver for the Seven Segment Display peripherals on the DE1-SoC.
+## Question 3
 
-Please refer to the assignment specification on Minerva for more details.
+### Discrition of the Fitness Function Used by the Mice
 
-The following files are provided:
- 
-| File | Purpose |
-| ---  | --- |
-| `1-A-SevenSegDisplay/.project`      | Skeleton DS-5 project definition |
-| `1-A-SevenSegDisplay/.cproject`     | As above |
-| `1-A-SevenSegDisplay/main.c`        | A test program which will allow you to test your solution (**do not modify**). |
-| `1-A-SevenSegDisplay/DE1SoC_SevenSeg/DE1SoC_SevenSeg.h` | The header file which defines the interface for the driver (**do not modify**). |
-| `1-A-SevenSegDisplay/DE1SoC_SevenSeg/DE1SoC_SevenSeg.c` | The implementation file for the driver. You need to complete this file. |
+The fitness used by the Mice is in [`Question1/mouse.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question1/mouse.cc) line 136-143.
 
-Please note the project will need configuring in DS-5 before it will compile.
-
-## Driver Functions 
-
-| Function Name  | Introduction
-| ---  | --- |
-| DE1SoC_SevenSeg_Write         | Low level set function to send a byte value to a selected display.             |
-| DE1SoC_SevenSeg_SetSingle     | Set a single seven segment display from a hexadecimal (0x0-0xF) value.    |
-| DE1SoC_SevenSeg_SetDoubleHex  | Set a pair of seven segment displays from a hexadecimal (0x00-0xFF) value.  |
-| DE1SoC_SevenSeg_SetDoubleDec  | Set a pair of seven segment displays from a decimal (00-99) value.          |
-
-### Required Layouts for the Hexadecimal Numbers 0-F
-<div align=center><img width="100" src="https://raw.githubusercontent.com/leeds-embedded-systems/ELEC5620M-Assignment1-Neowless/main/Bit_Layout.png?token=GHSAT0AAAAAABSHGZJDANJKLJSFW45MX2SAYROE3XA"/></div>
-
-<div align=center><text>Fig 1. Bit Mapping Layout</text></div>
-
-<div align=center><img width="500" src="Required_Layouts.png"/></div>
-
-<div align=center><text>Fig 2. Hexadecimal Number Layout</text></div>
-
-### Anode or Cathode?
-The 7-Segment displays on the DE-Soc share their **anode**.
-
-<div align=center><img width="500" src="Schematic_Diagram.png"/></div>
-
-<div align=center><text>Fig 2.Schematic Diagram for 7 Segment Displays</text></div>
-
-If the type of the displays have been changed in to cathode version, just replace the mapping table with the commented one in  `DE1SoC_SevenSeg_SetSingle` function in the [`1-A-SevenSegDisplay/DE1SoC_SevenSeg/DE1SoC_SevenSeg.c`](https://github.com/leeds-embedded-systems/ELEC5620M-Assignment1-Neowless/blob/main/1-A-SevenSegDisplay/DE1SoC_SevenSeg/DE1SoC_SevenSeg.c).
-
-
-
-```
-void DE1SoC_SevenSeg_SetSingle(unsigned int display, unsigned int value) {
-    // ToDo: Write the code for driving a single seven segment display here.
-    // Your function should turn a real value 0-F into the correctly encoded
-    // bits to enable the correct segments on the seven segment display to
-    // illuminate. Use the DE1SoC_SevenSeg_Write function you created earlier
-    // to set the bits of the display.
-
-	// Mapping_Table array defines the layout of the 7-Segment displays
-	//including 0-9 and A-F, which is a mapping or translation between the
-	//hex or decimal input and the actual output bit connected to the 7 segment
-	//displays.
-	
-	// Table for 7 segment displays with common Anode.
-	char Mapping_Table[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
-	// Table for 7 segment display with common Cathode.
-	//char table[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90,0x88,0x83,0xc6,0xa1,0x86,0x8e};
-
-	//Call the lower function to display the value.
-	DE1SoC_SevenSeg_Write(display, Mapping_Table[value]);
+``` C++
+	// The EvoMouse's fitness is the amount of cheese collected, divided by
+	// the power usage, so a mouse is penalised for simply charging around
+	// as fast as possible and randomly collecting cheese - it needs to find
+	// its target carefully.
+	virtual float GetFitness()const
+	{
+		return This.cheesesFound > 0 ? static_cast<float>(This.cheesesFound) / This.DistanceTravelled.as<float>() : 0;
+	}
 }
 ```
+The fitness of each mouse is obtained this `GetFitness()` function. There are two vairables in this function, `This.cheesesFound` indicates the cheeses found by the mouse in this generation simulation, and `This.DistanceTravelled.as` represents the distance the mouse travled in this generation.
+
+If the mouse found the cheese, its fitness value equals to the amount of the cheese divided by the distance it travled, or the fitness value equals to 0.
+
+$$ \left\{\begin{array}{l} \textup{Fitness} = \frac{\textup{Cheese Found}}{\textup{Distance Travlled}}(\textup{Cheese Found}>0)) 
+\\ \textup{Fitness} = 0(\textup{Cheese Found}=0)) 
+\end{array}\right. $$
+<div align=center><text>Equation 1. Mice Fitness Function</text></div>
+
+
+In order to train the mice forming a efficient way to find the cheese, the distance travled by the mouse determins the power consumption influencing the fitness value.
+***
