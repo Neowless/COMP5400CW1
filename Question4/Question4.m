@@ -99,6 +99,24 @@ ax = gca;
 ax.FontSize = 12;
 saveas(4,'Mean_Different_Angle.svg')
 
+
+figure(5)
+plot(generation,sensor_4_50)
+hold
+plot(generation,sensor_4_100)
+plot(generation,sensor_4_200)
+legend({'50','100','200'},'Location','northwest')
+title('Average Fitness of Different Range Configuration')
+xlabel('Generation Count') 
+ylabel('Fitness Number') 
+ax = gca;
+ax.FontSize = 12;
+xlim([0 3000])
+ylim([0 0.005])
+saveas(5,'Different_Range.svg')
+
+
+
 original_pulseSNR = snr((zeros(1,2000)+mean(average(1001:3000)))',average(1001:3000));
 fprintf('SNR of original sensor configuration %7.4f\n', original_pulseSNR)
 
