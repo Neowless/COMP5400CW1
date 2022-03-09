@@ -187,7 +187,7 @@ The new fitness function refers to [`Question4/mouse_new.cc`](https://github.com
 
 Evolution time is defined as the generation count the simulation took to make  the fitness value stable. Less generation amount it takes, better the fitness function it will be.
 
-<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/8bfcf0359dbbc4b6d3d22aa16622ab200e2b5546/Question4/Converge_Compare_Functions.svg"/></div>
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/fffcdf33f613da2568e052ff695a85c4b2b8b20c/Question4/Converge_Compare_Functions.svg"/></div>
 
 <div align=center><text>Figure 3. Convergenge of Different Fitness Function Comapre </text></div>
 
@@ -246,25 +246,21 @@ Sensor* NearestAngleSensor()
 }
 ```
 
-I tested the `ProximitySensor` as well, the codes for different sensor configurations are in [`Question4/mouse_sensor1.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor1.cc), [`Question4/mouse_sensor2.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor2.cc) and [`Question4/mouse_sensor3.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor3.cc).
+I tested the `ProximitySensor` as well, the codes for different sensor configurations is below.
+
+|  Angle |  Range | File |
+|---|---|---|
+| 2*pi | 50 | [`Question4/mouse_sensor1.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor1.cc) |
+| pi/3 | 50 | [`Question4/mouse_sensor2.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor2.cc)  |
+| pi/4 | 50 |  [`Question4/mouse_sensor3.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor3.cc) |
+| pi/4 | 100 |  [`Question4/mouse_sensor4.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor4.cc) |
+| pi/4 | 200 |  [`Question4/mouse_sensor5.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor5.cc) |
+| pi/4 | 200 |  [`Question4/mouse_sensor6.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor6.cc) |
+| pi/6 | 50 |  [`Question4/mouse_sensor7.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor7.cc) |
+| pi/8 | 50 |  [`Question4/mouse_sensor8.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor8.cc) |
 
 
-**Configuration 1**
-
-```C++
-	EvoMouse(): cheesesFound(0)
-	{
-//		This.Add("angle", NearestAngleSensor<Cheese>());
-// An alternative to the NearestAngleSensor is the Proximity Sensor, which
-// gives less precise directional information, but does let the mouse know
-// how far away the cheese is.
-		This.Add("proximity", ProximitySensor<Cheese>(PI/3, 50.0, 0.0));
-		This.InitRandom = true;
-		This.InitFFN(4);
-	}
-```
-
-**Configuration 2**
+<div align=center><text>Table 2. Parameters in Genetic Algorithms</text></div>
 
 ```C++
 	EvoMouse(): cheesesFound(0)
@@ -273,26 +269,12 @@ I tested the `ProximitySensor` as well, the codes for different sensor configura
 // An alternative to the NearestAngleSensor is the Proximity Sensor, which
 // gives less precise directional information, but does let the mouse know
 // how far away the cheese is.
-		This.Add("proximity", ProximitySensor<Cheese>(PI/6, 50.0, 0.0));
+		This.Add("proximity", ProximitySensor<Cheese>(angle, range, 0.0));
 		This.InitRandom = true;
 		This.InitFFN(4);
 	}
 ```
 
-**Configuration 3**
-
-```C++
-	EvoMouse(): cheesesFound(0)
-	{
-//		This.Add("angle", NearestAngleSensor<Cheese>());
-// An alternative to the NearestAngleSensor is the Proximity Sensor, which
-// gives less precise directional information, but does let the mouse know
-// how far away the cheese is.
-		This.Add("proximity", ProximitySensor<Cheese>(PI/6, 80.0, 0.0));
-		This.InitRandom = true;
-		This.InitFFN(4);
-	}
-```
 
 `ProximitySensor` is described in [`Question4/sensor.h`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/sensor.h). This sensor provides less precise directional information but it let the mouse know how far the cheese is.
 

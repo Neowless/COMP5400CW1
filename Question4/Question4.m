@@ -3,10 +3,10 @@ close all
 load("question_4.mat")
 rng default
 
-original_pulseSNR = snr((zeros(1,3000)+mean(average(1001:4000)))',average(1001:4000));
+original_pulseSNR = snr((zeros(1,2000)+mean(average(1001:3000)))',average(1001:3000));
 fprintf('SNR of original fitness function %6.2f\n', original_pulseSNR)
 
-new_pulseSNR = snr((zeros(1,3000)+mean(average_original(1001:4000)))',average_original(1001:4000));
+new_pulseSNR = snr((zeros(1,2000)+mean(average_original(1001:3000)))',average_original(1001:3000));
 fprintf('SNR of new fitness function %6.2f\n', new_pulseSNR)
 
 figure(1)

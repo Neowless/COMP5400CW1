@@ -114,7 +114,7 @@ public:
 // An alternative to the NearestAngleSensor is the Proximity Sensor, which
 // gives less precise directional information, but does let the mouse know
 // how far away the cheese is.
-		This.Add("proximity", ProximitySensor<Cheese>(PI/6, 80.0, 0.0));
+		This.Add("proximity", ProximitySensor<Cheese>(PI/3, 50, 0.0));
 		This.InitRandom = true;
 		This.InitFFN(4);
 	}
