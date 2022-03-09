@@ -86,7 +86,7 @@ ax = gca;
 ax.FontSize = 12;
 xlim([0 1000])
 ylim([0 0.005])
-saveas(2,'Different_Angle.svg')
+saveas(3,'Different_Angle.svg')
 
 original_pulseSNR = snr((zeros(1,2000)+mean(average(1001:3000)))',average(1001:3000));
 fprintf('SNR of original sensor configuration %7.4f\n', original_pulseSNR)
