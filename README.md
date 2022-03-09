@@ -198,7 +198,7 @@ It is easy to indicate the original fitness function can converge faster than th
 
 This is defined by the average fitness value's stability and noise level. Healthier specie has more stable average fitness value.
 
-Dispersion indicates the stability of the average fitness value. Because of the amplitude of average fitness values is not the same in different fitness function, the dispersion is measured by the SNR (Signal-to-noise ratio), assuming the mean value of the average fitness values is the original signal after convergence. The results are exported in the command window.
+Dispersion indicates the stability of the average fitness value. Because of the amplitude of average fitness values is not the same in different fitness function, the dispersion is measured by the SNR (Signal-to-noise ratio), assuming the mean value of the average fitness values is the original signal after convergence. The results are exported in the MATLAB command window.
 
 ```
 SNR of original fitness function -0.1783
@@ -295,18 +295,61 @@ Sensor* ProximitySensor(double scope, double range, double orientation)
 
 All of the sensor experiment are using the same original fitness function, so the mean value of the average fitness function is comparable. The sensor configuration with higher mean value after convergence has better perfomance. SNR is also introduced to evaluate the stability.
 
+The results are exported in the MATLAB command window. 
+
+```Matlab
+SNR of original sensor configuration -0.1783
+SNR of sensor configuration 1 -0.4143
+SNR of sensor configuration 2 -0.2334
+SNR of sensor configuration 3 -0.3790
+SNR of sensor configuration 4 -0.3124
+SNR of sensor configuration 5 -0.4421
+SNR of sensor configuration 6 -0.3589
+SNR of sensor configuration 7 -0.2482314
+SNR of sensor configuration 8 -0.4421
+Mean Value of original sensor configuration 0.0077
+Mean Value of sensor configuration 1 0.0009
+Mean Value of sensor configuration 2 0.0031
+Mean Value of sensor configuration 3 0.0033
+Mean Value of sensor configuration 4 0.0024
+Mean Value of sensor configuration 5 0.0021
+Mean Value of sensor configuration 6 0.0027
+Mean Value of sensor configuration 7 0.0022
+Mean Value of sensor configuration 8 0.0021
+```
+
 |Configuration Serial Number|Mean Value|SNR|
 |:-:|:-:|:-:|
-|Original||-0.1783|
-|1||-0.4143|
-|2||-0.2334|
-|3||-0.3790|
-|4||-0.3124|
-|5||-0.44|
-|6||-0.36|
-|7||-0.25|
-|8||-0.44|
+|Original|0.0077|-0.1783|
+|1|0.0009|-0.4143|
+|2|0.0031|-0.2334|
+|3|0.0033|-0.3790|
+|4|0.0024|-0.3124|
+|5|0.0021|-0.44|
+|6|0.0027|-0.36|
+|7|0.0022|-0.25|
+|8|0.0021|-0.44|
 
+<div align=center><text>Table 4. Different Configurations Sensor Experiment Result</text></div>
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/7c43248f6b641288ed96f66d0d2178889036db53/Question4/Compare_All_Sensors.svg"/></div>
+
+<div align=center><text>Figure 4. Average Fitness of Different Sensor Configuration </text></div>
+
+it is easy to indicate that, baesed on the mean values and amplitude plot, the final performancesthe `ProximitySensor` in these configurations are not as good as the `NearestAngleSensor`. Meanwhile, the `ProximitySensor` also has larger SNR, which means the `ProximitySensor`'s stability is better than others.
+
+As for the `ProximitySensor`.
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/43a3f5f1843adc73d6936a4859776dd72f1129e2/Question4/Different_Angle.svg"/></div>
+
+<div align=center><text>Figure 5. Average Fitness of Different Angle Configuration </text></div>
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/5f2889c13b3ea22f1af94e1234957b8d647b03d2/Question4/Different_Range.svg"/></div>
+
+<div align=center><text>Figure 6. Mean Value of Average Fitness of Different Range Configuration </text></div>
+
+Based on [Figure 5]('https://raw.githubusercontent.com/Neowless/COMP5400CW1/dbfff039cdf6e68583c0211b3d81faa032ffa75d/Question4/Mean_Different_Angle.svg') and [Table 4](), it is easy to summarize that, with the increment of the angle, the performance of the sensor may increase, and converge faster. Based on [Figure 6]('https://raw.githubusercontent.com/Neowless/COMP5400CW1/5f2889c13b3ea22f1af94e1234957b8d647b03d2/Question4/Different_Range.svg') and [Table 4](), larger range has better performance.
 
 *** 
 ### Reasons Behind Experiments
+The main difference of these two types of sensor is about the field of view of the mouse, which enable the mouse to sense and explore the cheese around it. With larger range or larger field of view, the mouse can sense the cheese better and collect more cheese. 

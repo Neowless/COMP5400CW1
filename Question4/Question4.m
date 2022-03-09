@@ -88,19 +88,8 @@ xlim([0 1000])
 ylim([0 0.005])
 saveas(3,'Different_Angle.svg')
 
+
 figure(4)
-plot([pi/2 pi/3 pi/4 pi/6 pi/8],[mean(sensor_2_50(1001:3000)) mean(sensor_3_50(1001:3000)) mean(sensor_4_50(1001:3000)) mean(sensor_6_50(1001:3000)) mean(sensor_8_50(1001:3000))])
-title('Mean value of Average Fitness of Different Angle Configuration')
-xlabel('Angle') 
-ylabel('Mean Value') 
-xticks([pi/8 pi/6 pi/4 pi/3 pi/2])
-xticklabels({'pi/8', 'pi/6', 'pi/4',' pi/3',' pi/2'})
-ax = gca;
-ax.FontSize = 12;
-saveas(4,'Mean_Different_Angle.svg')
-
-
-figure(5)
 plot(generation,sensor_4_50)
 hold
 plot(generation,sensor_4_100)
@@ -113,7 +102,7 @@ ax = gca;
 ax.FontSize = 12;
 xlim([0 3000])
 ylim([0 0.005])
-saveas(5,'Different_Range.svg')
+saveas(4,'Different_Range.svg')
 
 
 
