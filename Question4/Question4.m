@@ -70,4 +70,4 @@ ax = gca;
 ax.FontSize = 12;
 xlim([0 1000])
 ylim([0 2])
-saveas(2,'Converge_Compare.svg')
+saveas(5,'Converge_Compare.svg')
