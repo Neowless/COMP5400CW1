@@ -154,21 +154,58 @@ public:
 
 ## Question 4
 
-### Performance Evaluation of Different Fitness Functions
+### Performance Criterions and Evaluation
 
 The fitness function should be evaluated in different aspects, the evolution time and final performance.
 
+In this section, the original fitness function is the original fitness function applied in the [`Question4/mouse.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse.cc) line 136-143.
+
+``` C++
+	// The EvoMouse's fitness is the amount of cheese collected, divided by
+	// the power usage, so a mouse is penalised for simply charging around
+	// as fast as possible and randomly collecting cheese - it needs to find
+	// its target carefully.
+	virtual float GetFitness()const
+	{
+		return This.cheesesFound > 0 ? static_cast<float>(This.cheesesFound) / This.DistanceTravelled.as<float>() : 0;
+	}
+}
+```
+
+The new fitness function refers to [`Question4/mouse_new.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_new.cc) line 136-14.
+
+``` C++
+	// The EvoMouse's fitness is the amount of cheese collected.
+	virtual float GetFitness()const
+	{
+		return This.cheesesFound > 0 ? static_cast<float>(This.cheesesFound) : 0;
+	}
+}
+```
+
 **Evolution Time**
 
-Evolution time is defined as the generation count the simulation took that the fitness value will be stable. Less generation amount it takes, better the fitness function it will be.
+Evolution time is defined as the generation count the simulation took to make  the fitness value stable. Less generation amount it takes, better the fitness function it will be.
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/8bfcf0359dbbc4b6d3d22aa16622ab200e2b5546/Question4/Converge_Compare.svg"/></div>
+
+<div align=center><text>Figure 3. Convergenge of Different Fitness Function Comapre </text></div>
 
 **Stability of Average Fitness Value**
 
-This is defined by the average fitness value's stability and noise level. 
+This is defined by the average fitness value's stability and noise level. Healthier specie has more stable average fitness value.
+
+
 
 **Cheese Allocation**
 
 This is defined by the  which defined by the standard deviation of all the fitness values after 1000 generations of evolution. Smaller standart deviation indicates the fitness function has better performance
+
+***
+
+
+
+### 
 
 
 *** 
