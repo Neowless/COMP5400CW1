@@ -158,7 +158,7 @@ public:
 
 The fitness function should be evaluated in different aspects, the evolution time and final performance.
 
-In this section, the original fitness function is the original fitness function applied in the [`Question4/mouse.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse.cc) line 136-143.
+In this section, the original fitness function is the original fitness function applied in the [`Question4/mouse.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse.cc) line 136-143. The fitness equals to the amount of cheese collected, divided by the distance it traveld.
 
 ``` C++
 	// The EvoMouse's fitness is the amount of cheese collected, divided by
@@ -172,7 +172,7 @@ In this section, the original fitness function is the original fitness function 
 }
 ```
 
-The new fitness function refers to [`Question4/mouse_new.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_new.cc) line 136-14.
+The new fitness function refers to [`Question4/mouse_new.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_new.cc) line 136-14. The fitness equals to the amount of cheese collected.
 
 ``` C++
 	// The EvoMouse's fitness is the amount of cheese collected.
