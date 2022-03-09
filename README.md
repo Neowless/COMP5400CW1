@@ -1,5 +1,5 @@
 
-# COPM5400 Coursework1
+# Part One
 
 ## Question 1 
 
@@ -154,7 +154,7 @@ public:
 <div align=center><text>Table 2. Parameters in Genetic Algorithms</text></div>
 
 ## Question 4
-
+The scripts for generating the plots and data is [`Question4/Question4.m`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/Question4.m).
 ### Performance Criterions and Evaluation
 
 The fitness function should be evaluated in different aspects, the evolution time and final performance.
@@ -353,3 +353,26 @@ Based on [Figure 5]('https://raw.githubusercontent.com/Neowless/COMP5400CW1/dbff
 *** 
 ### Reasons Behind Experiments
 The main difference of these two types of sensor is about the field of view of the mouse, which enable the mouse to sense and explore the cheese around it. With larger range or larger field of view, the mouse can sense the cheese better and collect more cheese. 
+
+
+## Question 5
+
+### Review on Genetic Algorithms
+Genetic algorithms emulate the natural evolutionary process to find the optimal solution, applying the principles of selection and variation from Darwinian evolutionary theory. Directed selection, followed by undirected variation, reflects the fitness of each generation of individuals according to a fitness function that reflects the target, thus performing a selection operation followed by a genetic iteration that produces individuals with a new combination of genes.[1] [2]
+
+The process of genetic algorithms is in fact a process similar to biological evolution in biology, in which at each generation in a genetic algorithm, individuals are selected according to the size of their fitness in the problem domain and, with the help of genetic operators for combinatorial crossover and subjective and objective variation, a population representing the new set of solutions is evolved. This process is performed cyclically until the optimisation criterion is satisfied. Finally, the last generation of individuals is decoded to generate a near-optimal solution.[3]
+*** 
+### Behaviour of the Mice
+Collective behavior is the result of interaction and influence of each individual in the whole species, as for the mice simulation, the many small groups of mice usually compete for one cheese which is the best solution for the strongest individual or genetic clip. However, considering the reality, this behavior is not the best approach to select the best genetic for the whole species, especially considering the equality of cheese allocation. 
+*** 
+### Mice Collective Behaviour
+After southands of simulation, some the mice starts to follow other mice as groups to collect cheese rather than sense and explore the chheese on theri own. I regard this as an evidence of collective behaviour.
+
+
+## References
+
+[1] Debreuve, E., et al. "Using the shape gradient for active contour segmentation: from the continuous to the discrete formulation." *Journal of Mathematical Imaging and Vision* 28.1 (2007): 47-66.
+
+[2] Sridevi, T., and S. Sameen Fatima. "Digital image watermarking using genetic algorithm in DWT and SVD transform." (2013): 485-490.
+
+[3] Mitchell, Melanie. *An introduction to genetic algorithms*. MIT press, 1998.
