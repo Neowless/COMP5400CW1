@@ -55,6 +55,39 @@ xlim([0 3000])
 ylim([0 0.01])
 saveas(2,'Compare_All_Sensors.svg')
 
+figure(3)
+subplot(2,1,1);
+plot(generation,sensor_2_50)
+hold
+plot(generation,sensor_3_50)
+plot(generation,sensor_4_50)
+plot(generation,sensor_6_50)
+plot(generation,sensor_8_50)
+legend({'pi/2','pi/3','pi/4','pi/6','pi/8'},'Location','northwest')
+title('Average Fitness of Different Angle Configuration')
+xlabel('Generation Count') 
+ylabel('Fitness Number') 
+ax = gca;
+ax.FontSize = 12;
+xlim([0 3000])
+ylim([0 0.005])
+subplot(2,1,2);
+plot(generation,sensor_2_50)
+hold
+plot(generation,sensor_3_50)
+plot(generation,sensor_4_50)
+plot(generation,sensor_6_50)
+plot(generation,sensor_8_50)
+legend({'pi/2','pi/3','pi/4','pi/6','pi/8'},'Location','northwest')
+title('Average Fitness of Different Angle Configuration')
+xlabel('Generation Count') 
+ylabel('Fitness Number') 
+ax = gca;
+ax.FontSize = 12;
+xlim([0 1000])
+ylim([0 0.005])
+saveas(2,'Different_Angle.svg')
+
 original_pulseSNR = snr((zeros(1,2000)+mean(average(1001:3000)))',average(1001:3000));
 fprintf('SNR of original sensor configuration %7.4f\n', original_pulseSNR)
 
