@@ -9,7 +9,7 @@ fprintf('SNR of original fitness function %6.2f\n', original_pulseSNR)
 new_pulseSNR = snr((zeros(1,3000)+mean(average_original(1001:4000)))',average_original(1001:4000));
 fprintf('SNR of new fitness function %6.2f\n', new_pulseSNR)
 
-figure(5)
+figure(1)
 subplot(2,1,1);
 plot(generation,average_original,'LineWidth',1.2);
 title('Average Fitness Plot of Original Fitness Function')
@@ -30,4 +30,4 @@ ax = gca;
 ax.FontSize = 12;
 xlim([0 1000])
 ylim([0 2])
-saveas(5,'Converge_Compare.svg')
+saveas(1,'Converge_Compare_Functions.svg')

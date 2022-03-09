@@ -187,7 +187,7 @@ The new fitness function refers to [`Question4/mouse_new.cc`](https://github.com
 
 Evolution time is defined as the generation count the simulation took to make  the fitness value stable. Less generation amount it takes, better the fitness function it will be.
 
-<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/8bfcf0359dbbc4b6d3d22aa16622ab200e2b5546/Question4/Converge_Compare.svg"/></div>
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/8bfcf0359dbbc4b6d3d22aa16622ab200e2b5546/Question4/Converge_Compare_Functions.svg"/></div>
 
 <div align=center><text>Figure 3. Convergenge of Different Fitness Function Comapre </text></div>
 
@@ -307,6 +307,10 @@ Sensor* ProximitySensor(double scope, double range, double orientation)
 	return s;
 }
 ```
+
+*** 
+### Sensor Experiment
+
 
 *** 
 ### Reasons Behind Experiment
