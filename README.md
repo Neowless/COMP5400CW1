@@ -191,28 +191,122 @@ Evolution time is defined as the generation count the simulation took to make  t
 
 <div align=center><text>Figure 3. Convergenge of Different Fitness Function Comapre </text></div>
 
+It is easy to indicate the original fitness function can converge faster than the new fitness function, which means the original fitness function is better than the new fitness function in this aspect.
+
 **Stability of Average Fitness Value**
 
 This is defined by the average fitness value's stability and noise level. Healthier specie has more stable average fitness value.
 
+Dispersion indicates the stability of the average fitness value. Because of the amplitude of average fitness values is not the same in different fitness function, the dispersion is measured by the SNR (Signal-to-noise ratio), assuming the mean value of the average fitness values is the original signal after convergence. The results are exported in the command window.
+
+```
+>> Question4
+SNR of original fitness function  -0.18
+SNR of new fitness function  -0.07
+```
+The original fitness function has larger SNR which means the relevant noise level in the original fitness function's average fitness value is lower. The original fitness function is better
 
 
 **Cheese Allocation**
 
 This is defined by the  which defined by the standard deviation of all the fitness values after 1000 generations of evolution. Smaller standart deviation indicates the fitness function has better performance
 
-***
-
-
-
-### 
+However, I am not familiar with C++, I tried to modify the BEAST but it was not successful.
 
 
 *** 
-### Experiment with Different Sensor Configurations
+### Different Sensor Configurations Introduction
+
+In [`Question4/mouse.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse.cc), line 111-120 the `EvoMouse` is applied in the simulation. The original `EvoMouse` is using the `NearestAngleSensor`.
+
+```C++
+	EvoMouse(): cheesesFound(0)
+	{
+		This.Add("angle", NearestAngleSensor<Cheese>());
+// An alternative to the NearestAngleSensor is the Proximity Sensor, which
+// gives less precise directional information, but does let the mouse know
+// how far away the cheese is.
+//		This.Add("proximity", ProximitySensor<Cheese>(PI/8, 80.0, 0.0));
+		This.InitRandom = true;
+		This.InitFFN(4);
+	}
+```
+
+`NearestAngleSensor` is described in [`Question4/sensor.h`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/sensor.h). This sensor provides precise angular information but it does not let the mouse know how far the cheese is.
+
+```C++
+Sensor* NearestAngleSensor()
+{
+	Sensor* s = new Sensor(Vector2D(0.0, 0.0), 0.0);
+	s->SetMatchingFunction(new MatchKindOf<T>);
+	s->SetEvaluationFunction(new EvalNearestAngle(s, 1000.0));
+	s->SetScalingFunction(new ScaleLinear(-PI, PI, -1.0, 1.0));
+	
+	return s;
+}
+```
+
+I tested the `ProximitySensor` as well, the codes for different sensor configurations are in [`Question4/mouse_sensor1.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor1.cc), [`Question4/mouse_sensor2.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor2.cc) and [`Question4/mouse_sensor3.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor3.cc).
 
 
+**Configuration 1**
 
+```C++
+	EvoMouse(): cheesesFound(0)
+	{
+//		This.Add("angle", NearestAngleSensor<Cheese>());
+// An alternative to the NearestAngleSensor is the Proximity Sensor, which
+// gives less precise directional information, but does let the mouse know
+// how far away the cheese is.
+		This.Add("proximity", ProximitySensor<Cheese>(PI/3, 50.0, 0.0));
+		This.InitRandom = true;
+		This.InitFFN(4);
+	}
+```
+
+**Configuration 2**
+
+```C++
+	EvoMouse(): cheesesFound(0)
+	{
+//		This.Add("angle", NearestAngleSensor<Cheese>());
+// An alternative to the NearestAngleSensor is the Proximity Sensor, which
+// gives less precise directional information, but does let the mouse know
+// how far away the cheese is.
+		This.Add("proximity", ProximitySensor<Cheese>(PI/6, 50.0, 0.0));
+		This.InitRandom = true;
+		This.InitFFN(4);
+	}
+```
+
+**Configuration 3**
+
+```C++
+	EvoMouse(): cheesesFound(0)
+	{
+//		This.Add("angle", NearestAngleSensor<Cheese>());
+// An alternative to the NearestAngleSensor is the Proximity Sensor, which
+// gives less precise directional information, but does let the mouse know
+// how far away the cheese is.
+		This.Add("proximity", ProximitySensor<Cheese>(PI/6, 80.0, 0.0));
+		This.InitRandom = true;
+		This.InitFFN(4);
+	}
+```
+
+`ProximitySensor` is described in [`Question4/sensor.h`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/sensor.h). This sensor provides less precise directional information but it let the mouse know how far the cheese is.
+
+```C++
+Sensor* ProximitySensor(double scope, double range, double orientation)
+{
+	Sensor* s = new BeamSensor(scope, range, Vector2D(0.0, 0.0), orientation);
+	s->SetMatchingFunction(new MatchKindOf<T>);
+	s->SetEvaluationFunction(new EvalNearest(s, range));
+	s->SetScalingFunction(new ScaleLinear(0.0, range, 1.0, 0.0));
+	
+	return s;
+}
+```
 
 *** 
 ### Reasons Behind Experiment
