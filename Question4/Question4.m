@@ -31,17 +31,29 @@ ax.FontSize = 12;
 xlim([0 1000])
 ylim([0 2])
 saveas(1,'Converge_Compare_Functions.svg')
+
+
+
 figure(2)
 plot(generation,average_original)
 hold
+plot(generation,sensor_05_200)
 plot(generation,sensor_2_50)
 plot(generation,sensor_3_50)
 plot(generation,sensor_4_50)
+plot(generation,sensor_4_100)
+plot(generation,sensor_4_200)
 plot(generation,sensor_6_50)
 plot(generation,sensor_8_50)
-legend({'Original','pi/2','pi/3','pi/4','pi/6','pi/8'},'Location','northwest')
+legend({'Original','Congiuration 1','Congiuration 2','Congiuration 3','Congiuration 4','Congiuration 5','Congiuration 6','Congiuration 7','Congiuration 8'},'Location','northwest')
+title('Average Fitness of Different Sensor Configuration')
+xlabel('Generation Count') 
+ylabel('Fitness Number') 
+ax = gca;
+ax.FontSize = 12;
 xlim([0 3000])
 ylim([0 0.01])
+saveas(2,'Compare_All_Sensors.svg')
 
 original_pulseSNR = snr((zeros(1,2000)+mean(average(1001:3000)))',average(1001:3000));
 fprintf('SNR of original sensor configuration %7.4f\n', original_pulseSNR)
