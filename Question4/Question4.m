@@ -97,6 +97,7 @@ xticks([pi/8 pi/6 pi/4 pi/3 pi/2])
 xticklabels({'pi/8', 'pi/6', 'pi/4',' pi/3',' pi/2'})
 ax = gca;
 ax.FontSize = 12;
+saveas(3,'Mean_Different_Angle.svg')
 
 original_pulseSNR = snr((zeros(1,2000)+mean(average(1001:3000)))',average(1001:3000));
 fprintf('SNR of original sensor configuration %7.4f\n', original_pulseSNR)
