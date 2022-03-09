@@ -1,3 +1,4 @@
+
 # COPM5400 Coursework1
 
 ## Question 1 
@@ -26,7 +27,7 @@ The simulation was terminated after 3,000 generations to obtain enough data. [Fi
 The mice evolves fatser, smarter and more efficient seeking the cheese over evolutionary time. The specific behaviours in explained in [Table 1]()
 
 | Generation Count | Behaviour | 
-| ---  | --- |
+| :-:  | --- |
 | 0    | The mice move randomly and slowly, most of them are circling, only a few of the mice are moving at a relative faster speed in a relative straight line. The mice rarely obtain the cheese.| 
 |   300   | The mice increase the speed. A few of mice’s movement show regular rules aiming at the cheese. However, the whole specie’s behaviours are irregular. After finishing one cheese, the mice just keep the previous direction. Some of the mice obtain the cheese. | 
 |    500   | The behaviour does not change a lot, but the moving speed of the mice increase a little. Some of the mice are competing for one cheese.|
@@ -143,7 +144,7 @@ public:
 ```
 
 |  Parameters |  Source Code |  Influence |
-|---|---|---|
+|:-:|---|---|
 |  Crossover Probability | `theGA(0.7f, 0.05f)`  | The core in the evolution of nature is played by the crossover of biological genes. Similarly, The core in genetic algorithms is played by the crossover operator of genetic operations. A crossover is an operation in which parts of the structure of two parent individuals are replaced and recombined to create a new individual. By crossover, the search power of genetic algorithms is improved by leaps and bounds.  |
 | Mutation Probability  |  `theGA(0.7f, 0.05f)` |  The mutation operator is applied to change the value of a gene at some locus of a string of individuals in a population. When a genetic algorithm has approached the neighbourhood of the optimal solution through the crossover operator, this local stochastic search capability of the variation operator can be used to accelerate convergence to the optimal solution. The variation operator maintains population diversity to prevent immature convergence. |
 | Selection Option |  `This.theGA.SetSelection(GA_RANK)` |  The rank proportional selection of the invidual is used, preventing one or twooverwhelmingly fit individuals in a population from dominating the nextgeneration. So if in a population of 3 individuals you had scores of(2, 3, 400), rank selection would convert these to (0.167, 0.333, 0.5). |
@@ -200,9 +201,8 @@ This is defined by the average fitness value's stability and noise level. Health
 Dispersion indicates the stability of the average fitness value. Because of the amplitude of average fitness values is not the same in different fitness function, the dispersion is measured by the SNR (Signal-to-noise ratio), assuming the mean value of the average fitness values is the original signal after convergence. The results are exported in the command window.
 
 ```
->> Question4
-SNR of original fitness function  -0.18
-SNR of new fitness function  -0.07
+SNR of original fitness function -0.1783
+SNR of new fitness function -0.0682
 ```
 The original fitness function has larger SNR which means the relevant noise level in the original fitness function's average fitness value is lower. The original fitness function is better
 
@@ -215,7 +215,7 @@ However, I am not familiar with C++, I tried to modify the BEAST but it was not 
 
 
 *** 
-### Different Sensor Configurations Introduction
+### Different Sensor Configurations
 
 In [`Question4/mouse.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse.cc), line 111-120 the `EvoMouse` is applied in the simulation. The original `EvoMouse` is using the `NearestAngleSensor`.
 
@@ -246,21 +246,21 @@ Sensor* NearestAngleSensor()
 }
 ```
 
-I tested the `ProximitySensor` as well, the codes for different sensor configurations is below.
+I tested the `ProximitySensor` as well, the codes for different sensor configurations is below. The Angle and Range in [Table 3]() are the parameters with the same name in `ProximitySensor<Cheese>(Angle, Range, 0.0))`.
 
-|  Angle |  Range | File |
-|---|---|---|
-| 2*pi | 50 | [`Question4/mouse_sensor1.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor1.cc) |
-| pi/3 | 50 | [`Question4/mouse_sensor2.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor2.cc)  |
-| pi/4 | 50 |  [`Question4/mouse_sensor3.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor3.cc) |
-| pi/4 | 100 |  [`Question4/mouse_sensor4.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor4.cc) |
-| pi/4 | 200 |  [`Question4/mouse_sensor5.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor5.cc) |
-| pi/4 | 200 |  [`Question4/mouse_sensor6.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor6.cc) |
-| pi/6 | 50 |  [`Question4/mouse_sensor7.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor7.cc) |
-| pi/8 | 50 |  [`Question4/mouse_sensor8.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor8.cc) |
+| Serial Number |  Angle |  Range | File |
+|:-:|:-:|:-:|---|
+|1| 2*pi | 50 | [`Question4/mouse_sensor1.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor1.cc) |
+|2| pi/3 | 50 | [`Question4/mouse_sensor2.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor2.cc)  |
+|3| pi/4 | 50 |  [`Question4/mouse_sensor3.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor3.cc) |
+|4| pi/4 | 100 |  [`Question4/mouse_sensor4.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor4.cc) |
+|5| pi/4 | 200 |  [`Question4/mouse_sensor5.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor5.cc) |
+|6| pi/4 | 200 |  [`Question4/mouse_sensor6.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor6.cc) |
+|7| pi/6 | 50 |  [`Question4/mouse_sensor7.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor7.cc) |
+|8| pi/8 | 50 |  [`Question4/mouse_sensor8.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/mouse_sensor8.cc) |
 
 
-<div align=center><text>Table 2. Parameters in Genetic Algorithms</text></div>
+<div align=center><text>Table 3. ProximitySensor Configurations</text></div>
 
 ```C++
 	EvoMouse(): cheesesFound(0)
@@ -269,7 +269,7 @@ I tested the `ProximitySensor` as well, the codes for different sensor configura
 // An alternative to the NearestAngleSensor is the Proximity Sensor, which
 // gives less precise directional information, but does let the mouse know
 // how far away the cheese is.
-		This.Add("proximity", ProximitySensor<Cheese>(angle, range, 0.0));
+		This.Add("proximity", ProximitySensor<Cheese>(Angle, Range, 0.0));
 		This.InitRandom = true;
 		This.InitFFN(4);
 	}
@@ -283,7 +283,7 @@ Sensor* ProximitySensor(double scope, double range, double orientation)
 {
 	Sensor* s = new BeamSensor(scope, range, Vector2D(0.0, 0.0), orientation);
 	s->SetMatchingFunction(new MatchKindOf<T>);
-	s->SetEvaluationFunction(new EvalNearest(s, range));
+	s->SetEvaluationFunction(new EvalNearest(s, Range));
 	s->SetScalingFunction(new ScaleLinear(0.0, range, 1.0, 0.0));
 	
 	return s;
@@ -293,6 +293,20 @@ Sensor* ProximitySensor(double scope, double range, double orientation)
 *** 
 ### Sensor Experiment
 
+All of the sensor experiment are using the same original fitness function, so the mean value of the average fitness function is comparable. The sensor configuration with higher mean value after convergence has better perfomance. SNR is also introduced to evaluate the stability.
+
+|Configuration Serial Number|Mean Value|SNR|
+|:-:|:-:|:-:|
+|Original||-0.1783|
+|1||-0.4143|
+|2||-0.2334|
+|3||-0.3790|
+|4||-0.3124|
+|5||-0.44|
+|6||-0.36|
+|7||-0.25|
+|8||-0.44|
+
 
 *** 
-### Reasons Behind Experiment
+### Reasons Behind Experiments
