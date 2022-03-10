@@ -154,7 +154,7 @@ public:
 <div align=center><text>Table 2. Parameters in Genetic Algorithms</text></div>
 
 ## Question 4
-The scripts for generating the plots and data is [`Question4/Question4.m`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/Question4.m).
+The scripts for generating the plots and data is [`Question4/Question4.m`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/Question4.m), the data is extracted in [`Question4/question_4.mat`](https://github.com/Neowless/COMP5400CW1/blob/main/Question4/question_4.mat).
 ### Performance Criterions and Evaluation
 
 The fitness function should be evaluated in different aspects, the evolution time and final performance.
@@ -372,55 +372,105 @@ After southands of simulation, some the mice starts to follow other mice as grou
 # Part Two
 
 ## Question 6
-Collegue Name:
+Collegue Names: Yiqiao Wang, Rui Hou
 
+The scripts for generating the plots and data is [`Question6/question_6.m`](https://github.com/Neowless/COMP5400CW1/blob/main/Question6/question_6.m), the data is extracted in [`Question6/question_6.mat`](https://github.com/Neowless/COMP5400CW1/blob/main/Question6/question_6.mat).
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Predator_100.svg"/></div>
+
+<div align=center><text>Figure 7. Average Fitness of Predator in Different Test </text></div>
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Prey_100.svg"/></div>
+
+<div align=center><text>Figure 8. Average Fitness of Prey in Different Test </text></div>
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Predator_Prey_3000.svg"/></div>
+
+<div align=center><text>Figure 9. Average Fitness of Prey and Predator in Same Test </text></div>
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Reciprocal_100.svg"/></div>
+
+<div align=center><text>Figure 10. Prey Average Fitness and Reciprocal of Average Fitness of Predator </text></div>
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Reciprocal_3000.svg"/></div>
+
+<div align=center><text>Figure 11. Prey Average Fitness and Reciprocal of Average Fitness of Predator </text></div>
+
+<div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Prey_All.svg"/></div>
+
+<div align=center><text>Figure 12. Different Student Results </text></div>
 
 ## Question 7
 
 | Generation Count | Predator Behaviour | 
 | :-:  | --- |
-|   0     |  | 
-|   10    |  | 
-|   50    |  | 
-|   100   |  |
-|   1000  |  |
-|   5000  |  |
+|   0     | The behaviour of the predator is highly irregular, even the prey is closely infront of it, the predator is still indifferent. Only some of the lucky predator may hitted by the prey.| 
+|   10    | A few predators start to change it direction to get closer to the preys, but the action to change the direction is very small, most of the predator continue to move straight. | 
+|   50    | The predator starts to circling around a large circle to scan more field to find the preys. | 
+|   100   | The behaviour of predator does not change a lot. |
+|   1000  | The behaviour mode of the predator does not change a lot, but the predator are more willing to twist around to scan more area. |
+|   5000  | The predator starts to twisting around at a really high speed to evaluate the distance of different preys around it to decide which one to follow and catch, once the object is locked it will follow the prey closly.|
 
 
 <div align=center><text>Table 5. Predator Behaviours in Different Generations</text></div>
 
 | Generation Count | Prey Behaviour | 
 | :-:  | --- |
-|   0     |  | 
-|   10    |  | 
-|   50    |  | 
-|   100   |  |
-|   1000  |  |
-|   5000  |  |
+|   0     | The behaviour of the prey is also highly irregular or stupid, some of the prey get caught by the predator, then it will revive and flash into another random place.| 
+|   10    | Most of the prey are moving around a circle, others are travling around. Some of the prey starts to avoid the prdator, the the action of changing the direction is also very small, but the action is very effective to stay alive. | 
+|   50    | Most of the prey are still moving around a circle, but the diameter of the circle get larger. But their behaviour to avoid the prdator is not as good as expected.  | 
+|   100   | The prey starts to avoid the predator more efficiently. |
+|   1000  | The prey can avoid the route of the predator efficiently. But there's also some of the preys get caught by the predator. |
+|   5000  | The prey starts to twisting aroound to observe the predator around it, once the predator starts getting closer, it will speed up and run to get out of the field of view if the predator as soon as posibble. |
 
 <div align=center><text>Table 6. Prey Behaviours in Different Generations</text></div>
 
+Based on the beahaviours above in this simulation rules, the prey and predator are both giving pressure to each other. Based on the observed behaviour, both the predator and the prey has became more intelligent. The prey's behaviours became more complementary to the prdator, the behaviours of these species is in competitive arm races in many aspects, especially after southands of simulation. The predator has becamed more aggressive and intelligent in detection, and the prey has become more sensitive and intelligent in anti-detection and escaping.
+
+So they are in co-evolution.
+
 ## Question 8
+
+The behaviours of the agents are determined by the fitness functions in [`Question6/chase.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question6/chase.cc). 
+
+As for the Prey, the fitness function is in line 47-50. The code indicates the fitness equals to the reciprocal of it get caught by the predator. Healthier prey get cautght less.
+
+```C++
+	float GetFitness()const
+	{
+		return 1.0f / static_cast<float>(timesEaten);
+	}
+```
+
+As for the Predator, the fitness function is in line 95. Its fitness equals to the amount of the prey it catch. Healthier predator catch more preys.
+
+```C++
+	float GetFitness()const { return preyEaten; }
+```
+
+Based on the fitness functions above, the average values of the fitness should have similar characters to the reciprocal relationship.
+
+In [Figure 9](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Predator_Prey_3000.svg), [Figure 10](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Reciprocal_100.svg) and [Figure 11](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Reciprocal_3000.svg) above. It is easy to indicates that the averge fitness between the prey and predator have reciprocal relationship.
+
+In [Figure 9](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Predator_Prey_3000.svg), when the average of the fitness of prey increase, the average fitness of the predator will decline and vice versa. Especially in the generation count equals around 700, 1900 and 2400. The fitness of these two species are very sensitive to each other. Which means the prey and the predator are in competitive arm races and co-evolution.
 
 # Part Three
 
 ## Question 9
 
-The subject, in perceiving such of the purposive target object, produces a cognition that the other party is able to process, has the capacity to process, or has the corresponding function, and is referred to as intelligence. From an informatics perspective, this purposeful processing of intelligence is also a process of processing information, which derives its processing logic from the extraction and application of objective laws and drives. Intelligence can therefore also be seen as a manifestation of the use of knowledge. Intelligence can also be used as a general term for the ability to develop things according to a system of inertia without external forces, whereas purposeful processing changes the original direction of development, as if some force is generated. Different things have different processing logics, i.e. they have different purposes, ranging from the overly simple, such as conditioned reflexes, to the overly complex, where simple logics are stitched together, linked, nested, and combined to create a variety of abilities, such as perception, memory, imagination, thinking, attention, rallying, cohesion, execution, etc. However, the generalised titles can be summarised.
+The subject, in perceiving such of the purposive target object, produces a cognition that the other party is able to process, has the capacity to process, or has the corresponding function, and is referred to as intelligence[4]. From an informatics perspective, this purposeful processing of intelligence is also a process of processing information, which derives its processing logic from the extraction and application of objective laws and drives.[5] Intelligence can therefore also be seen as a manifestation of the use of knowledge.[6] Intelligence can also be used as a general term for the ability to develop things according to a system of inertia without external forces, whereas purposeful processing changes the original direction of development, as if some force is generated. Different things have different processing logics, they have different purposes, ranging from the overly simple, such as conditioned reflexes, to the overly complex, where simple logics are stitched together, linked, nested, and combined to create a variety of abilities, such as perception, memory, imagination, thinking, attention, rallying, cohesion, execution, etc. However, the generalised titles can be summarised[7].
 
-There are categories of intelligence, there are sizes, and the various intelligences can co-exist, depend on each other, complement each other, be connected, or even be mutually exclusive. Any combination of them constitutes a wide range of intelligences. From automatic doors with a single function to automated production lines with complex functions; from micro-organisms with the capacity to grow, reproduce and adapt, to human beings of all kinds, including groups of people, such as units, groups, organisations, nations, societies and human races, and even elementary particles and cosmic stars that can bounce off, deform or disintegrate on impact. From a rigid body with intelligence infinitely close to zero, to the quantification of the extremes of each human ability, a full-dimensional radar map can be constructed, then the hypothetical human, which sets all the extremes of human ability, represents the highest standard of the current level of human intelligence, which is also the highest standard of intelligence of known species, and can be tentatively called standard intelligence. Standard intelligence will continue to improve as humans explore, dig, and accumulate new knowledge.
+There are categories of intelligence, there are sizes, and the various intelligences can co-exist, depend on each other, complement each other, be connected, or even be mutually exclusive.[8] Any combination of them constitutes a wide range of intelligences. From automatic doors with a single function to automated production lines with complex functions; from micro-organisms with the capacity to grow, reproduce and adapt, to human beings of all kinds, including groups of people, such as units, groups, organisations, nations, societies and human races, and even elementary particles and cosmic stars that can bounce off, deform or disintegrate on impact[6]. From a rigid body with intelligence infinitely close to zero, to the quantification of the extremes of each human ability, a full-dimensional radar map can be constructed, then the hypothetical human, which sets all the extremes of human ability, represents the highest standard of the current level of human intelligence, which is also the highest standard of intelligence of known species, and can be tentatively called standard intelligence[9]. Standard intelligence will continue to improve as humans explore, dig, and accumulate new knowledge.
 
-Since its formal introduction in 1956, artificial intelligence has been given the ultimate goal of creating a level of intelligence like that of a human being. This is where scientists from different fields converged. Starting with the structure, function and role of the human brain, they formed three mainstream schools of thought, corresponding to connectionism, symbolism and behaviourism respectively.
+Artificial intelligence has been given the ultimate goal of creating a level of intelligence like that of a human being[10]. This is where scientists from different fields converged. Starting with the structure, function and role of the human brain, they formed three mainstream schools of thought, corresponding to connectionism, symbolism and behaviourism respectively.
 
-Brain-like intelligence is a continuation of connectionism, a vision of artificial intelligence proposed in the late 1980s, in which they hoped to study the working mechanism of the human brain and simulate a robot with the same ability to think and learn as humans. It currently relies on two main techniques: deep learning and reinforcement learning.
+Brain-like intelligence is a continuation of connectionism, a vision of artificial intelligence proposed in the late 1980s, in which they hoped to study the working mechanism of the human brain and simulate a robot with the same ability to think and learn as humans[11]. It currently relies on two main techniques: deep learning and reinforcement learning.
 
-Cognitive intelligence was developed out of the field of computing and is pretty much a continuation of symbolism. They believe that there are three stages to achieve artificial intelligence: computational intelligence, perceptual intelligence and cognitive intelligence, where cognitive intelligence mainly addresses the ability to understand and actively think, and is currently popularly divided into language comprehension, analytical reasoning and personality emotion.
+Cognitive intelligence was developed out of the field of computing and is pretty much a continuation of symbolism. They believe that there are three stages to achieve artificial intelligence: computational intelligence, perceptual intelligence and cognitive intelligence, where cognitive intelligence mainly addresses the ability to understand and actively think, and is currently popularly divided into language comprehension, analytical reasoning and personality emotion.[12]
 
-General intelligence is machine intelligence that has general human intelligence and can perform any intellectual task that humans can perform. It is aimed at passing the Turing test, a sort of continuation of behaviourism, and is currently mostly in the academic discussion stage and simulation.
+General intelligence is machine intelligence that has general human intelligence and can perform any intellectual task that humans can perform. It is aimed at passing the Turing test, a sort of continuation of behaviourism, and is currently mostly in the academic discussion stage and simulation.[13]
 
-The human brain is a very sophisticated system, from the development of the fertilised egg to adulthood, and any slight deficiency in it, whether in the innate neurological system or in education and training, may result in mental retardation. The human brain is a very sophisticated system, from the spermatozoa to the adult.
-
-One of the simplest and most economical ways to solve this problem is to strengthen self-learning ability, so that the intelligences can make up for their lack of ability through self-learning, thus achieving an overall increase in intelligence level. The strength of intelligence is relative, as long as there is self-learning ability it can change from weak to strong, so strong intelligence does not mean strong intelligence, but specifically refers to having the ability to actively acquire knowledge, i.e. self-learning ability, which can strengthen itself, and this is the only difference between strong intelligence and weak intelligence.
+ The strength of intelligence is relative, as long as there is self-learning ability it can change from weak to strong, so strong intelligence does not mean strong intelligence, but specifically refers to having the ability to actively acquire knowledge. **The prey and the predator has shown their ability to learn and develop intelegence**, although their intelegence is not as strong as the species in reality. Because of our world is a collection countless factors and species. However, **this level of intelegence is limited**, all of the results can be simulated and predicted, becaused of the limited factor in the simulation creature in the simulation world. The actual intelegence is strongly connected with the free will and actual random with no limitation. Before the discover of quatum mechanics, some of the scientis believe all of our behaviour can be calculated and simulated with methmatical modeling and approach, so the whole world is running with a fated programm and pattern. But for free will in the metaphysical sense, that is a contradiction to determinism. Assuming a determinism like Laplace's demon, where future events (including all human actions) are uniquely determined by past events, free will in the metaphysical sense is clearly impossible. Therefore, such free will is possible if determinism can be shown to be false. And quantum mechanics can then be used to introduce non-determinism. The indeterminacy of the quantum is inherent to it, which is fundamentally different from the indeterminacy of the dice. Of course Einstein's theory of hidden variables still attempts to interpret quantum mechanics in terms of determinism, but Bell's theorem has at least shown that the theory of fixed-domain hidden variables is wrong.
 
 # References
 
@@ -429,3 +479,23 @@ One of the simplest and most economical ways to solve this problem is to strengt
 [2] Sridevi, T., and S. Sameen Fatima. "Digital image watermarking using genetic algorithm in DWT and SVD transform." (2013): 485-490.
 
 [3] Mitchell, Melanie. *An introduction to genetic algorithms*. MIT press, 1998.
+
+[4] McQuillan, Jeff, and Lucy Tse. "Child language brokering in linguistic minority communities: Effects on cultural interaction, cognition, and literacy." *Language and Education 9.3* (1995): 195-215.
+
+[5] Lumia, Ronald, John Fiala, and Albert Wavering. "I ntelligent C ontrols Group National Bureau of Standards.
+
+[6] Bradford, Gwen. "Knowledge, achievement, and manifestation." Erkenntnis 80.1 (2015): 97-116.
+
+[7] Castree, Noel. "Neoliberalising nature: the logics of deregulation and reregulation." *Environment and planning* A 40.1 (2008): 131-152.
+
+[8] Neisser, Ulric. "The concept of intelligence." *Intelligence* 3.3 (1979): 217-227.
+
+[9] MLA	Deary, Ian J., and Peter G. Caryl. "Neuroscience and human intelligence differences." *Trends in Neurosciences* 20.8 (1997): 365-371.
+
+[10] PK, FATHIMA ANJILA. "*What is Artificial Intelligence?." “Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do*”. (1984): 65.
+
+[11] Velik, Rosemarie. "AI reloaded: objectives, potentials, and challenges of the novel field of brain-like artificial intelligence." BRAIN. *Broad Research in Artificial Intelligence and Neuroscience* 3.3 (2012): 25-54.
+
+[12] MLA Côté, Stéphane, and Christopher TH Miners. "*Emotional intelligence, cognitive intelligence, and job performance." Administrative science quarterly* 51.1 (2006): 1-28.
+
+[13] Spearman, Charles. "" *General Intelligence*" Objectively Determined and Measured." (1961).
