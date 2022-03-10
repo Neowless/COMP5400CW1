@@ -37,6 +37,7 @@ ax.FontSize = 12;
 saveas(2,'Predator_100.svg')
 
 figure(3)
+subplot(2,2,1);
 plot(generation_3000,Prey_3000_Me,'LineWidth',1.1)
 hold
 plot(generation_3000,1./Predator_3000_Me,'LineWidth',1.1)
@@ -45,9 +46,29 @@ legend({'Test 1 Prey','Test 1 Reciprocal of Predator'},'Location','northeast')
 xlim([0 3000])
 ax = gca;
 ax.FontSize = 12;
-saveas(3,'Reciprocal_3000.svg')
 
-figure(4)
+
+subplot(2,2,2)
+plot(generation_1800,Prey_1800_Me,'LineWidth',1.1)
+hold
+plot(generation_1800,1./Predator_1800_Me,'LineWidth',1.1)
+title(['Prey Average Fitness and Reciprocal of  Average Fitness of Predator'])
+legend({'Test 2 Prey','Test 2 Reciprocal of Predator'},'Location','northeast')
+xlim([0 3000])
+ax = gca;
+ax.FontSize = 12;
+
+subplot(2,2,3)
+plot(generation_1000,Prey_1000_Me,'LineWidth',1.1)
+hold
+plot(generation_1000,1./Predator_1000_Me,'LineWidth',1.1)
+title(['Prey Average Fitness and Reciprocal of  Average Fitness of Predator'])
+legend({'Test 3 Prey','Test 4 Reciprocal of Predator'},'Location','northeast')
+xlim([0 3000])
+ax = gca;
+ax.FontSize = 12;
+
+subplot(2,2,4)
 plot(generation_100,Prey_100_Yiqiao_1,'LineWidth',1.1)
 hold
 plot(generation_100,1./Predator_100_Yiqiao_1,'LineWidth',1.1)
@@ -57,57 +78,9 @@ xlim([0 100])
 ax = gca;
 ax.FontSize = 12;
 
-saveas(4,'Reciprocal_100.svg')
-
-figure(5)
-plot(generation_3000,Prey_3000_Me,'LineWidth',1.1)
-hold
-plot(generation_1000,Prey_1000_Me,'LineWidth',1.1)
-plot(generation_1800,Prey_1800_Yiqiao,'LineWidth',1.1)
-title(['Average Fitness of Different Prey'])
-legend({'Prey of Yuheng Huo','Prey of Rui Hou','Prey of Yiqiao Wang'},'Location','northeast')
-xlim([0 3000])
-ax = gca;
-ax.FontSize = 12;
-saveas(5,'Prey_All.svg')
-
-figure(6)
-plot(generation_3000,Predator_3000_Me,'LineWidth',1.1)
-hold
-plot(generation_1000,Predator_1000_Me,'LineWidth',1.1)
-plot(generation_1800,Predator_1800_Yiqiao,'LineWidth',1.1)
-title(['Average Fitness of Different Predator'])
-legend({'Predator of Yuheng Huo','Predator of Rui Hou','Predator of Yiqiao Wang'},'Location','northeast')
-xlim([0 3000])
-ax = gca;
-ax.FontSize = 12;
-saveas(6,'Predator_All.svg')
-
-figure(7)
-subplot(2,1,1);
-plot(generation_3000,Prey_3000_Me,'LineWidth',1.1)
-title(['Average Fitness of Prey'])
-legend({'Prey'},'Location','northeast')
-xlim([0 3000])
-ylim([0.15 0.8])
-xticks([0 700 1900 2400 3000])
-xticklabels({'0','700','1900','2400','3000'})
-ax = gca;
-ax.FontSize = 12;
-subplot(2,1,2);
-plot(generation_3000,Predator_3000_Me,'LineWidth',1.1)
-title(['Average Fitness of Predator'])
-legend({'Predator'},'Location','northeast')
-xlim([0 3000])
-ylim([0.5 12])
-xticks([0 700 1900 2400 3000])
-xticklabels({'0','700','1900','2400','3000'})
-ax = gca;
-ax.FontSize = 12;
-saveas(7,'Predator_Prey_3000.svg')
 
 
-
+saveas(3,'Reciprocal_3000.svg')
 % 
 % figure(3)
 % plot(generation_1000,Prey_1000_Me)
