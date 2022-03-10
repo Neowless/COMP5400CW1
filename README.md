@@ -369,7 +369,62 @@ Collective behavior is the result of interaction and influence of each individua
 After southands of simulation, some the mice starts to follow other mice as groups to collect cheese rather than sense and explore the chheese on theri own. I regard this as an evidence of collective behaviour.
 
 
-## References
+# Part Two
+
+## Question 6
+Collegue Name:
+
+
+## Question 7
+
+| Generation Count | Predator Behaviour | 
+| :-:  | --- |
+|   0     |  | 
+|   10    |  | 
+|   50    |  | 
+|   100   |  |
+|   1000  |  |
+|   5000  |  |
+
+
+<div align=center><text>Table 5. Predator Behaviours in Different Generations</text></div>
+
+| Generation Count | Prey Behaviour | 
+| :-:  | --- |
+|   0     |  | 
+|   10    |  | 
+|   50    |  | 
+|   100   |  |
+|   1000  |  |
+|   5000  |  |
+
+<div align=center><text>Table 6. Prey Behaviours in Different Generations</text></div>
+
+## Question 8
+
+# Part Three
+
+## Question 9
+
+### Definitions of Intelligence
+
+The subject, in perceiving such of the purposive target object, produces a cognition that the other party is able to process, has the capacity to process, or has the corresponding function, and is referred to as intelligence. From an informatics perspective, this purposeful processing of intelligence is also a process of processing information, which derives its processing logic from the extraction and application of objective laws and drives. Intelligence can therefore also be seen as a manifestation of the use of knowledge. Intelligence can also be used as a general term for the ability to develop things according to a system of inertia without external forces, whereas purposeful processing changes the original direction of development, as if some force is generated. Different things have different processing logics, i.e. they have different purposes, ranging from the overly simple, such as conditioned reflexes, to the overly complex, where simple logics are stitched together, linked, nested, and combined to create a variety of abilities, such as perception, memory, imagination, thinking, attention, rallying, cohesion, execution, etc. However, the generalised titles can be summarised.
+
+There are categories of intelligence, there are sizes, and the various intelligences can co-exist, depend on each other, complement each other, be connected, or even be mutually exclusive. Any combination of them constitutes a wide range of intelligences. From automatic doors with a single function to automated production lines with complex functions; from micro-organisms with the capacity to grow, reproduce and adapt, to human beings of all kinds, including groups of people, such as units, groups, organisations, nations, societies and human races, and even elementary particles and cosmic stars that can bounce off, deform or disintegrate on impact. From a rigid body with intelligence infinitely close to zero, to the quantification of the extremes of each human ability, a full-dimensional radar map can be constructed, then the hypothetical human, which sets all the extremes of human ability, represents the highest standard of the current level of human intelligence, which is also the highest standard of intelligence of known species, and can be tentatively called standard intelligence. Standard intelligence will continue to improve as humans explore, dig, and accumulate new knowledge.
+
+Since its formal introduction in 1956, artificial intelligence has been given the ultimate goal of creating a level of intelligence like that of a human being. This is where scientists from different fields converged. Starting with the structure, function and role of the human brain, they formed three mainstream schools of thought, corresponding to connectionism, symbolism and behaviourism respectively.
+
+Brain-like intelligence is a continuation of connectionism, a vision of artificial intelligence proposed in the late 1980s, in which they hoped to study the working mechanism of the human brain and simulate a robot with the same ability to think and learn as humans. It currently relies on two main techniques: deep learning and reinforcement learning.
+
+Cognitive intelligence was developed out of the field of computing and is pretty much a continuation of symbolism. They believe that there are three stages to achieve artificial intelligence: computational intelligence, perceptual intelligence and cognitive intelligence, where cognitive intelligence mainly addresses the ability to understand and actively think, and is currently popularly divided into language comprehension, analytical reasoning and personality emotion.
+
+General intelligence is machine intelligence that has general human intelligence and can perform any intellectual task that humans can perform. It is aimed at passing the Turing test, a sort of continuation of behaviourism, and is currently mostly in the academic discussion stage and simulation.
+
+The human brain is a very sophisticated system, from the development of the fertilised egg to adulthood, and any slight deficiency in it, whether in the innate neurological system or in education and training, may result in mental retardation. The human brain is a very sophisticated system, from the spermatozoa to the adult.
+
+One of the simplest and most economical ways to solve this problem is to strengthen self-learning ability, so that the intelligences can make up for their lack of ability through self-learning, thus achieving an overall increase in intelligence level. The strength of intelligence is relative, as long as there is self-learning ability it can change from weak to strong, so strong intelligence does not mean strong intelligence, but specifically refers to having the ability to actively acquire knowledge, i.e. self-learning ability, which can strengthen itself, and this is the only difference between strong intelligence and weak intelligence.
+
+# References
 
 [1] Debreuve, E., et al. "Using the shape gradient for active contour segmentation: from the continuous to the discrete formulation." *Journal of Mathematical Imaging and Vision* 28.1 (2007): 47-66.
 
