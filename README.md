@@ -19,7 +19,7 @@ The simulation was terminated after 3,000 generations to obtain enough data. [Fi
 
 <div align=center><text>Figure 2. Average and Best Fitness Versus Generation Count Whole Range</text></div>
 
-* For the generation count range. In the generation domain from 0 to 150, the values of average fitness are highly irregular. In the range of 150-400, the average fitness numbers increase non-linearly. After 400 generations, the average fitness of the mice becomes stable around 0.008. The best fitness value also has similar characteristics. The generation range for both fitness are **0-400**
+* For the generation count range, In the generation domain from 0 to 150, the average fitness values are highly irregular. In the 150-400, the average fitness numbers increase non-linearly. After 400 generations, the average fitness of the mice becomes stable at around 0.008. The best fitness value also has similar characteristics. The generation range for both type of fitness are **0-400**
 * For the fitness range. Considering the noise level and representive generation range. 
 
 ## Question 2
@@ -28,11 +28,11 @@ The mice evolves fatser, smarter and more efficient seeking the cheese over evol
 
 | Generation Count | Behaviour | 
 | :-:  | --- |
-| 0    | The mice move randomly and slowly, most of them are circling, only a few of the mice are moving at a relative faster speed in a relative straight line. The mice rarely obtain the cheese.| 
-|   300   | The mice increase the speed. A few of mice’s movement show regular rules aiming at the cheese. However, the whole specie’s behaviours are irregular. After finishing one cheese, the mice just keep the previous direction. Some of the mice obtain the cheese. | 
+| 0    | The mice move randomly and slowly. Most of them are circling. Only a few mice are moving at a relatively faster speed in a relatively straight line. The mice rarely obtain the cheese.| 
+|   300   | The mice increase the speed. A few of the mice’s movements show regular rules aiming at the cheese. However, the whole specie’s behaviours are irregular. After finishing one cheese, the mice keep the previous direction. Some of the mice obtain the cheese. | 
 |    500   | The behaviour does not change a lot, but the moving speed of the mice increase a little. Some of the mice are competing for one cheese.|
-| 1000 | All of the mice are moving at a relative high speed, the mice are divided into many groups, each group usually competing for one cheese, after finishing one cheese, the mice are really sensitive to the nearest cheese and change its direction to obtain another cheese. | 
-| 4000 | The mice started to rotate on the spot to evaluate the distances of the cheese around it which is a more efficient way to decide the behaviour. |
+| 1000 | All of the mice are moving at a relatively high speed. The mice are divided into many groups. Each group usually competes for one cheese. After finishing one cheese, the mice are susceptible to the nearest cheese and change its direction to obtain another cheese. | 
+| 4000 | The mice started to rotate on the spot to evaluate the distances of the cheese around it, which is a more efficient way to decide the behaviour. |
 
 <div align=center><text>Table 1. Mice Behaviours in Different Generations</text></div>
 
@@ -53,11 +53,11 @@ The fitness used by the Mice is in [`Question1/mouse.cc`](https://github.com/Neo
 	}
 }
 ```
-The fitness of each mouse is obtained this `GetFitness()` function. There are two vairables in this function, `This.cheesesFound` indicates the cheeses found by the mouse in this generation simulation, and `This.DistanceTravelled.as` represents the distance the mouse travled in this generation.
+The fitness of each mouse has obtained this `GetFitness()` function. There are two variables in this function, `This.cheesesFound` indicates the cheeses found by the mouse in this generation simulation, and `This.DistanceTravelled.as` represents the distance the mouse travelled in this generation.
 
-If the mouse found the cheese, its fitness value equals to the amount of the cheese divided by the distance it travled, or the fitness value equals to 0.
-ß
-In order to train the mice forming a efficient way to find the cheese, the distance travled by the mouse determins the power consumption influencing the fitness value.
+If the mouse found the cheese, its fitness value equals the amount of the cheese divided by the distance it travelled, or the fitness value equals 0.
+
+To train the mice form an efficient way to find the cheese, the distance travelled by the mouse determines the power consumption influencing the fitness value.
 *** 
 
 ### Experiment with Different Fitness Functions Case 1
@@ -77,7 +77,7 @@ With the increment of the simulation generation count, the behaviour becomes mor
 
 ### Experiment with Different Fitness Functions Case 2
 
-In case 2, the fitness value and the amount of the cheese collected has first order linear relationship. The fitnesee equals to the amount of the cheese divided by 100.
+In case 2, the fitness value and the amount of cheese collected have a first-order linear relationship. The fitness equals the amount of cheese divided by 100.
 
 ``` C++
 	virtual float GetFitness()const
@@ -92,7 +92,7 @@ With the increment of the simulation generation count, the behaviour becomes sim
 
 ### Experiment with Different Fitness Functions Case 3
 
-In case 3, the fitness value and the travled distance has first order linear relationship. The fitnesee equals to the travled distance of the mouse divided by 1000.
+In case 3, the fitness value and the travelled distance has a first-order linear relationship. The fitness equals the travelled distance of the mouse divided by 1000.
 
 ``` C++
 	virtual float GetFitness()const
@@ -101,11 +101,11 @@ In case 3, the fitness value and the travled distance has first order linear rel
 	}
 }
 ```
-When the simulation started, the behaviour of the mice is similar to the original fitness function ones.
+When the simulation started, the behaviour of the mice was similar to the original fitness function ones.
 
-With the increment of the simulation generation count, speed of the mice increased a lot, and the mice just move directly rather than change its direction. The performance of the mice deteriorated.
+With the increment of the simulation generation count, the speed of the mice increased a lot, and the mice moved directly rather than changing their direction. The performance of the mice deteriorated.
 
-The fitness function determines the **trend** and **efficiency** of the evolution.
+The fitness function determines the evolution's **trend** and **efficiency**.
 
 
 *** 
@@ -186,32 +186,34 @@ The new fitness function refers to [`Question4/mouse_new.cc`](https://github.com
 
 **Evolution Time**
 
-Evolution time is defined as the generation count the simulation took to make  the fitness value stable. Less generation amount it takes, better the fitness function it will be.
+Evolution time is defined as the simulation's generation count to make the fitness value stable—the less generation amount it takes, the better the fitness function.
 
 <div align=center><img width="500" src="https://raw.githubusercontent.com/Neowless/COMP5400CW1/fffcdf33f613da2568e052ff695a85c4b2b8b20c/Question4/Converge_Compare_Functions.svg"/></div>
 
 <div align=center><text>Figure 3. Convergenge of Different Fitness Function Comapre </text></div>
 
-It is easy to indicate the original fitness function can converge faster than the new fitness function, which means the original fitness function is better than the new fitness function in this aspect.
+It is easy to indicate the original fitness function can converge faster than the new fitness function, which means the original fitness function is betIt is easy to indicate that the original fitness function can converge faster than the new fitness function, which means it is better than the latest fitness function in this aspect.ter than the new fitness function in this aspect.
 
 **Stability of Average Fitness Value**
 
 This is defined by the average fitness value's stability and noise level. Healthier specie has more stable average fitness value.
 
-Dispersion indicates the stability of the average fitness value. Because of the amplitude of average fitness values is not the same in different fitness function, the dispersion is measured by the SNR (Signal-to-noise ratio), assuming the mean value of the average fitness values is the original signal after convergence. The results are exported in the MATLAB command window.
+Dispersion indicates the stability of the average fitness value. Because of the amplitude of average fitness values is not the same in different fitnesThis is defined by the average fitness value's stability and noise level. Healthier species has a more stable average fitness value.
+
+Dispersion indicates the stability of the average fitness value. Because the amplitude of average fitness values is not the same in different fitness functions, the dispersion is measured by the SNR (Signal-to-noise ratio), assuming the mean value of the average fitness values is the original signal after convergence. The results are exported in the MATLAB command window.s function, the dispersion is measured by the SNR (Signal-to-noise ratio), assuming the mean value of the average fitness values is the original signal after convergence. The results are exported in the MATLAB command window.
 
 ```
 SNR of original fitness function -0.1783
 SNR of new fitness function -0.0682
 ```
-The original fitness function has larger SNR which means the relevant noise level in the original fitness function's average fitness value is lower. The original fitness function is better
+The original fitness function has larger SNR, which means the appropriate noise level in the original fitness function's average fitness value is lower. The initial fitness function is better.
 
 
 **Cheese Allocation**
 
-This is defined by the  which defined by the standard deviation of all the fitness values after 1000 generations of evolution. Smaller standart deviation indicates the fitness function has better performance
+This is defined by the standard deviation of all the fitness values after 1000 generations of evolution. Minor standard deviation indicates the fitness function has better performance.
 
-However, I am not familiar with C++, I tried to modify the BEAST but it was not successful.
+However, I am not familiar with C++, I tried to modify the BEAST, but it was unsuccessful.
 
 
 *** 
@@ -293,7 +295,7 @@ Sensor* ProximitySensor(double scope, double range, double orientation)
 *** 
 ### Sensor Experiment
 
-All of the sensor experiment are using the same original fitness function, so the mean value of the average fitness function is comparable. The sensor configuration with higher mean value after convergence has better perfomance. SNR is also introduced to evaluate the stability.
+All of the sensor experiments use the same original fitness function, so the mean value of the average fitness function is comparable. The sensor configuration with a higher mean value after convergence has better performance. SNR is also introduced to evaluate stability.
 
 The results are exported in the MATLAB command window. 
 
@@ -352,21 +354,21 @@ Based on [Figure 5]('https://raw.githubusercontent.com/Neowless/COMP5400CW1/dbff
 
 *** 
 ### Reasons Behind Experiments
-The main difference of these two types of sensor is about the field of view of the mouse, which enable the mouse to sense and explore the cheese around it. With larger range or larger field of view, the mouse can sense the cheese better and collect more cheese. 
+The main difference between these two sensor types is the mouse's field of view, which enables the mouse to sense and explore the cheese around it. The mouse can sense the cheese better and collect more cheese with a larger range or more extensive field of view. 
 
 
 ## Question 5
 
 ### Review on Genetic Algorithms
-Genetic algorithms emulate the natural evolutionary process to find the optimal solution, applying the principles of selection and variation from Darwinian evolutionary theory. Directed selection, followed by undirected variation, reflects the fitness of each generation of individuals according to a fitness function that reflects the target, thus performing a selection operation followed by a genetic iteration that produces individuals with a new combination of genes.[1] [2]
+Genetic algorithms emulate the natural evolutionary process to find the optimal solution, applying Darwinian evolutionary theory's principles of selection and variation. Directed selection, followed by undirected variation, reflects the fitness of each generation of individuals according to a fitness function that reflects the target, thus performing a selection operation followed by a genetic iteration that produces individuals with a new combination of genes.[1] [2]
 
-The process of genetic algorithms is in fact a process similar to biological evolution in biology, in which at each generation in a genetic algorithm, individuals are selected according to the size of their fitness in the problem domain and, with the help of genetic operators for combinatorial crossover and subjective and objective variation, a population representing the new set of solutions is evolved. This process is performed cyclically until the optimisation criterion is satisfied. Finally, the last generation of individuals is decoded to generate a near-optimal solution.[3]
+The process of genetic algorithms is, in fact, a process similar to biological evolution in biology, in which at each generation in a genetic algorithm, individuals are selected according to the size of their fitness in the problem domain and, with the help of genetic operators for combinatorial crossover and subjective and objective variation, a population representing the new set of solutions is evolved. This process is performed cyclically until the optimisation criterion is satisfied. Finally, the last generation of individuals is decoded to generate a near-optimal key.[3]
 *** 
 ### Behaviour of the Mice
-Collective behavior is the result of interaction and influence of each individual in the whole species, as for the mice simulation, the many small groups of mice usually compete for one cheese which is the best solution for the strongest individual or genetic clip. However, considering the reality, this behavior is not the best approach to select the best genetic for the whole species, especially considering the equality of cheese allocation. 
+Collective behaviour results from the interaction and influence of each individual in the whole species. As for the mice simulation, the many small groups of mice usually compete for one cheese which is the best solution for the most vital individual or genetic clip. However, considering the reality, this behaviour is not the best approach to select the best genetic for the whole species, especially considering the equality of cheese allocation. 
 *** 
 ### Mice Collective Behaviour
-After southands of simulation, some the mice starts to follow other mice as groups to collect cheese rather than sense and explore the chheese on theri own. I regard this as an evidence of collective behaviour.
+After the thousands of simulations, some of the mice start to follow other mice as groups to collect cheese rather than sense and explore the cheese independently. I regard this as evidence of collective behaviour.
 
 
 # Part Two
@@ -425,7 +427,7 @@ The scripts for generating the plots and data is [`Question6/question_6.m`](http
 
 <div align=center><text>Table 6. Prey Behaviours in Different Generations</text></div>
 
-Based on the beahaviours above in this simulation rules, the prey and predator are both giving pressure to each other. Based on the observed behaviour, both the predator and the prey has became more intelligent. The prey's behaviours became more complementary to the prdator, the behaviours of these species is in competitive arm races in many aspects, especially after southands of simulation. The predator has becamed more aggressive and intelligent in detection, and the prey has become more sensitive and intelligent in anti-detection and escaping.
+Based on the behaviours above in this simulation rules, the prey and predator give pressure to each other. Based on the observed behaviour, both the predator and prey have become more intelligent. The prey's behaviours became more complementary to the predator. The behaviours of these species are in competitive arm races in many aspects, especially after thousands of simulations. The predator has become more aggressive and intelligent in detection, and the prey has become more sensitive and intelligent in anti-detection and escaping.
 
 So they are in co-evolution.
 
@@ -433,7 +435,7 @@ So they are in co-evolution.
 
 The behaviours of the agents are determined by the fitness functions in [`Question6/chase.cc`](https://github.com/Neowless/COMP5400CW1/blob/main/Question6/chase.cc). 
 
-As for the Prey, the fitness function is in line 47-50. The code indicates the fitness equals to the reciprocal of it get caught by the predator. Healthier prey get cautght less.
+As for the Prey, the fitness function is in lines 47-50. The code indicates that fitness equals the reciprocal of getting caught by the predator. Healthier prey gets caught less.
 
 ```C++
 	float GetFitness()const
@@ -448,29 +450,29 @@ As for the Predator, the fitness function is in line 95. Its fitness equals to t
 	float GetFitness()const { return preyEaten; }
 ```
 
-Based on the fitness functions above, the average values of the fitness should have similar characters to the reciprocal relationship.
+Based on the fitness functions above, the average values of the fitness should have similar characteristics to the reciprocal relationship.
 
 In [Figure 9](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Predator_Prey_3000.svg), [Figure 10](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Reciprocal_100.svg) and [Figure 11](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Reciprocal_3000.svg) above. It is easy to indicates that the averge fitness between the prey and predator have reciprocal relationship.
 
-In [Figure 9](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Predator_Prey_3000.svg), when the average of the fitness of prey increase, the average fitness of the predator will decline and vice versa. Especially in the generation count equals around 700, 1900 and 2400. The fitness of these two species are very sensitive to each other. Which means the prey and the predator are in competitive arm races and co-evolution.
+In [Figure 9](https://raw.githubusercontent.com/Neowless/COMP5400CW1/5efa22a39e058d98b19f0bc42814abd5ff87b56c/Question6/Predator_Prey_3000.svg), when the average fitness of prey increases, the average fitness of the predator will decline, and vice versa, especially in the generation count equals around 700, 1900 and 2400. The soundness of these two species is very sensitive to each other. This means the prey and the predator are in competitive arm races and co-evolution.
 
 # Part Three
 
 ## Question 9
 
-The subject, in perceiving such of the purposive target object, produces a cognition that the other party is able to process, has the capacity to process, or has the corresponding function, and is referred to as intelligence[4]. From an informatics perspective, this purposeful processing of intelligence is also a process of processing information, which derives its processing logic from the extraction and application of objective laws and drives.[5] Intelligence can therefore also be seen as a manifestation of the use of knowledge.[6] Intelligence can also be used as a general term for the ability to develop things according to a system of inertia without external forces, whereas purposeful processing changes the original direction of development, as if some force is generated. Different things have different processing logics, they have different purposes, ranging from the overly simple, such as conditioned reflexes, to the overly complex, where simple logics are stitched together, linked, nested, and combined to create a variety of abilities, such as perception, memory, imagination, thinking, attention, rallying, cohesion, execution, etc. However, the generalised titles can be summarised[7].
+In perceiving the purposive target object, the subject produces a cognition that the other party can process, process, or has the corresponding function, and is referred to as intelligence[4]. From an informatics perspective, this purposeful processing of intelligence is also a process of processing information, which derives its processing logic from the extraction and application of objective laws and drives.[5] Intelligence can therefore also be seen as a manifestation of the use of knowledge.[6] Intelligence can also be used as a general term for developing things according to a system of inertia without external forces. In contrast, purposeful processing changes the original development direction as if some power is generated. Different items have different processing logic. They have different purposes, ranging from the overly simple, such as conditioned reflexes, to the overly complex, where simple logics are stitched together, linked, nested, and combined to create a variety of abilities, such as perception, memory, imagination, thinking, attention, rallying, cohesion, execution, etc. However, the generalised titles can be summarised[7].
 
-There are categories of intelligence, there are sizes, and the various intelligences can co-exist, depend on each other, complement each other, be connected, or even be mutually exclusive.[8] Any combination of them constitutes a wide range of intelligences. From automatic doors with a single function to automated production lines with complex functions; from micro-organisms with the capacity to grow, reproduce and adapt, to human beings of all kinds, including groups of people, such as units, groups, organisations, nations, societies and human races, and even elementary particles and cosmic stars that can bounce off, deform or disintegrate on impact[6]. From a rigid body with intelligence infinitely close to zero, to the quantification of the extremes of each human ability, a full-dimensional radar map can be constructed, then the hypothetical human, which sets all the extremes of human ability, represents the highest standard of the current level of human intelligence, which is also the highest standard of intelligence of known species, and can be tentatively called standard intelligence[9]. Standard intelligence will continue to improve as humans explore, dig, and accumulate new knowledge.
+There are categories of intelligence sizes, and the various intelligence can co-exist, depend on each other, complement each other, be connected, or even be mutually exclusive.[8] Any combination of them constitutes a wide range of intelligence. From automatic doors with a single function to automated production lines with complex processes; from micro-organisms with the capacity to grow, reproduce and adapt, to human beings of all kinds, including groups of people, such as units, groups, organisations, nations, societies and human races, and even elementary particles and cosmic stars that can bounce off, deform or disintegrate on impact[6]. From a rigid body with intelligence infinitely close to zero to the quantification of the extremes of each human ability, a full-dimensional radar map can be constructed, then the hypothetical human, which sets all the extremes of human power, represents the highest standard of the current level of human intelligence, which is also the highest standard of intelligence of known species, and can be tentatively called standard intelligence[9]. Traditional intelligence will continue to improve as humans explore, dig, and accumulate new knowledge.
 
-Artificial intelligence has been given the ultimate goal of creating a level of intelligence like that of a human being[10]. This is where scientists from different fields converged. Starting with the structure, function and role of the human brain, they formed three mainstream schools of thought, corresponding to connectionism, symbolism and behaviourism respectively.
+Artificial intelligence has been given the ultimate goal of creating a level of intelligence like that of a human being[10]. This is where scientists from different fields converged. Starting with the structure, function, and role of the human brain, they formed three mainstream schools of thought, corresponding to connectionism, symbolism, and behaviourism.
 
-Brain-like intelligence is a continuation of connectionism, a vision of artificial intelligence proposed in the late 1980s, in which they hoped to study the working mechanism of the human brain and simulate a robot with the same ability to think and learn as humans[11]. It currently relies on two main techniques: deep learning and reinforcement learning.
+Brain-like intelligence is a continuation of connectionism, a vision of artificial intelligence proposed in the late 1980s. They hoped to study the working mechanism of the human brain and simulate a robot with the same ability to think and learn as humans[11]. It currently relies on two main techniques: deep learning and reinforcement learning.
 
-Cognitive intelligence was developed out of the field of computing and is pretty much a continuation of symbolism. They believe that there are three stages to achieve artificial intelligence: computational intelligence, perceptual intelligence and cognitive intelligence, where cognitive intelligence mainly addresses the ability to understand and actively think, and is currently popularly divided into language comprehension, analytical reasoning and personality emotion.[12]
+Cognitive intelligence was developed out of computing and is pretty much a continuation of symbolism. They believe that there are three stages to achieve artificial intelligence: computational intelligence, perceptual intelligence and cognitive intelligence, where cognitive intelligence mainly addresses the ability to understand and actively think, and is currently popularly divided into language comprehension, analytical reasoning and personality emotion.[12]
 
-General intelligence is machine intelligence that has general human intelligence and can perform any intellectual task that humans can perform. It is aimed at passing the Turing test, a sort of continuation of behaviourism, and is currently mostly in the academic discussion stage and simulation.[13]
+General intelligence is machine intelligence with general human intelligence and can perform any intellectual task that humans can perform. It aims to pass the Turing test, a continuation of behaviourism and is currently mainly in the academic discussion stage and simulation.[13]
 
- The strength of intelligence is relative, as long as there is self-learning ability it can change from weak to strong, so strong intelligence does not mean strong intelligence, but specifically refers to having the ability to actively acquire knowledge. **The prey and the predator has shown their ability to learn and develop intelegence**, although their intelegence is not as strong as the species in reality. Because of our world is a collection countless factors and species. However, **this level of intelegence is limited**, all of the results can be simulated and predicted, becaused of the limited factor in the simulation creature in the simulation world. The actual intelegence is strongly connected with the free will and actual random with no limitation. Before the discover of quatum mechanics, some of the scientis believe all of our behaviour can be calculated and simulated with methmatical modeling and approach, so the whole world is running with a fated programm and pattern. But for free will in the metaphysical sense, that is a contradiction to determinism. Assuming a determinism like Laplace's demon, where future events (including all human actions) are uniquely determined by past events, free will in the metaphysical sense is clearly impossible. Therefore, such free will is possible if determinism can be shown to be false. And quantum mechanics can then be used to introduce non-determinism. The indeterminacy of the quantum is inherent to it, which is fundamentally different from the indeterminacy of the dice. Of course Einstein's theory of hidden variables still attempts to interpret quantum mechanics in terms of determinism, but Bell's theorem has at least shown that the theory of fixed-domain hidden variables is wrong.
+ The strength of intelligence is relative. As long as there is self-learning ability, it can change from weak to strong, so vital intelligence does not mean strong intelligence but refers explicitly to acquiring knowledge actively. **The prey and the predator has shown their ability to learn and develop intelligence**, although their intelligence is not as vital as the species in reality. Our world is a collection of countless factors and species. However, **this level of intelligence is limited**, all of the results can be simulated and predicted because of the limiting factor in the simulation creature in the simulation world. The actual intelligence is strongly connected with free will and actual random with no limitation. Before discovering quantum mechanics, some of the scientists believed all of our behaviour could be calculated and simulated with mathematical modelling and approach, so the whole world is running with a fated programme and pattern. But for free will in the metaphysical sense, that contradicts determinism. Assuming a determinism like Laplace's demon, where future events (including all human actions) are uniquely determined by past events, free will in the metaphysical sense is impossible. Therefore, such free will is possible if determinism can be shown to be false. And quantum mechanics can then be used to introduce non-determinism. The indeterminacy of the quantum is inherent to it, which is fundamentally different from the indeterminacy of the dice. 
 
 # References
 
