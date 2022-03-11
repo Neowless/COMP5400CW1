@@ -370,7 +370,15 @@ Collective behaviour results from the interaction and influence of each individu
 ### Mice Collective Behaviour
 After the thousands of simulations, some of the mice start to follow other mice as groups to collect cheese rather than sense and explore the cheese independently. I regard this as evidence of collective behaviour.
 
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 # Part Two
 
 ## Question 6
